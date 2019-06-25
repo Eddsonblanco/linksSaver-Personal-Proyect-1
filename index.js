@@ -31,11 +31,15 @@ app.use((req,res,next) =>{
 
 
 // routes
-app.use(require('./src/routes/index'));
+app.use(require('./src/routes/index.js'));
+app.use(require('./src/routes/authentication.js'));
+app.use(require('./src/routes/links.js'));
 
 
 
 // public
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 // Starting the server
